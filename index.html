@@ -137,5 +137,113 @@
 </ol>
 
 <h2 id="branching">Branching & Merging</h2>
+
+<li>
+    <p>Erstelle einen Branch mit dem Namen kleine_revolution</p>
+    <code>git branch kleine_revolution</code>
+</li>
+
+<li>
+    <p>Lass dir alle Branches anzeigen</p>
+    <code>git branch</code>
+
+    <p class="expected-result">kleine_revolution
+        * master
+    </p>
+</li>
+
+<li>
+    <p>Wechsle in den Branch kleine_revolution</p>
+    <code>git checkout kleine_revolution</code>
+
+    <p class="expected-result">Switched to branch 'kleine_revolution'</p>
+</li>
+
+<li>
+    <p>Ändere die Datei stgb.txt und ersetze den Inhalt "Der König hat immer Recht"</p>
+    <code>echo "Der König hat immer Recht" > stgb.txt</code>
+</li>
+
+
+<li>
+    <p>Erstelle einen Commit für die Änderung der stgb.txt</p>
+    <code>git commit -a -m "liva la revolution"</code>
+
+    <p class="expected-result">[kleine_revolution b0c6103] liva la revolution<br/>
+        1 file changed, 1 insertion(+), 1 deletion(-)
+    </p>
+</li>
+
+<li>
+    <p>Wechsle in den Branch master</p>
+    <code>git checkout master</code>
+
+    <p class="expected-result">Switched to branch 'master'</p>
+</li>
+
+
+<li>
+    <p>Füge "§ 14 Handeln für einen anderen" zu stgb.txt hinzu</p>
+    <code>echo "§ 14 Handeln für einen anderen" >> stgb.txt</code>
+</li>
+
+<li>
+    <p>Erstelle einen Commit für die Änderung der stgb.txt</p>
+    <code>git commit -a -m "neues gesetz"</code>
+
+    <p class="expected-result">[master e22a053] neues gesetz<br/>
+        1 file changed, 1 insertion(+)
+    </p>
+</li>
+
+
+<li>
+    <p>Lass dir von Git die Änderungen zum "kleine_revolution" Branch anzeigen</p>
+    <code>git diff kleine_revolution</code>
+
+    <p class="expected-result">[master e22a053] neues gesetz<br/>
+        1 file changed, 1 insertion(+)
+    </p>
+</li>
+
+<li>
+    <p>Lass dir von Git die Änderungen zum "kleine_revolution" Branch anzeigen</p>
+    <code>git diff kleine_revolution</code>
+
+    <p class="expected-result">[master e22a053] neues gesetz<br/>
+        1 file changed, 1 insertion(+)
+    </p>
+</li>
+
+<li>
+    <p>Merge den kleine_revolution Branch</p>
+    <code>git merge kleine_revolution</code>
+
+    <p class="expected-result">Auto-merging stgb.txt<br/>
+        CONFLICT (content): Merge conflict in stgb.txt<br/>
+        Automatic merge failed; fix conflicts and then commit the result.
+    </p>
+</li>
+
+
+<li>
+    <p>Behebe den Konflikt von Hand</p>
+    <code>start stgb.txt oder open stgb.txt</code>
+</li>
+
+<li>
+    <p>Füge die gemergte Datei wieder zu Git</p>
+    <code>git add stgb.txt</code>
+</li>
+
+<li>
+    <p>Erstelle einen Commit für die Änderung der stgb.txt</p>
+    <code>git commit -a -m "final"</code>
+
+    <p class="expected-result">[master e22a053] neues gesetz<br/>
+        1 file changed, 1 insertion(+)
+    </p>
+</li>
+
 </body>
 </html>
