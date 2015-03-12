@@ -67,14 +67,14 @@
         <p>Schau dir den Status des <cite>working trees</cite> an</p>
         <code>git status</code>
 
-        <p class="expected-result">Erwartete Ausgabe: <cite>Untracked files: stgb.txt</cite></p>
+        <p class="expected-result">Erwartete Ausgabe: <cite>Untracked files: gg.txt</cite></p>
     </li>
     <li>
         <p>Füge die Datei dem <cite>index</cite> hinzu und schau dir erneut den Status an</p>
         <code>git add gg.txt
             git status</code>
 
-        <p class="expected-result">Erwartete Ausgabe: <cite>Changes to be committed: stgb.txt</cite></p>
+        <p class="expected-result">Erwartete Ausgabe: <cite>Changes to be committed: gg.txt</cite></p>
     </li>
     <li>
         <p>Erstelle einen Commit mit der Beschreibung <cite>add 1.1</cite> und schau dir erneut den Status an</p>
@@ -235,15 +235,6 @@
     </p>
 </li>
 
-
-<li>
-    <p>Lass dir von Git die Änderungen zum "kleine_revolution" Branch anzeigen</p>
-    <code>git diff kleine_revolution</code>
-
-    <p class="expected-result">[master e22a053] neues gesetz<br/>
-        1 file changed, 1 insertion(+)
-    </p>
-</li>
 
 <li>
     <p>Lass dir von Git die Änderungen zum "kleine_revolution" Branch anzeigen</p>
