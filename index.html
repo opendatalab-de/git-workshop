@@ -137,5 +137,44 @@
 </ol>
 
 <h2 id="branching">Branching & Merging</h2>
+
+<h2 id="collaborating">Zusammenarbeiten</h2>
+<ol>
+    <li>
+        <p>Füge der Datei gg.txt eine weitere Zeile hinzu: "9.1 Alle Deutschen haben das Recht, Vereine und
+            Gesellschaften zu bilden." und lass dir von Git die Änderung anzeigen</p>
+        <code>echo "Alle Deutschen haben das Recht, Vereine und Gesellschaften zu bilden." >> gg.txt
+            git diff</code>
+    </li>
+    <li>
+        <p>Erstelle einen Commit für die Änderung in der gg.txt</p>
+        <code>git commit -a -m "add gg 9.1"</code>
+    </li>
+    <li>
+        <p>Lass dir die Änderungen des aktuellen Commits anzeigen</p>
+        <code>git show</code>
+    </li>
+    <li>
+        <p>Lass dir alle bisherigen Commits anzeigen</p>
+        <code>git log</code>
+
+        <p class="expected-result">Erwartete Ausgabe: 3 Commits</p>
+    </li>
+    <li>
+        <p>Lass dir alle bisherigen Commits anzeigen, die die Datei grundgesetz.txt betreffen</p>
+        <code>git log grundgesetz.txt</code>
+
+        <p class="expected-result">Erwartete Ausgabe: 2 Commits</p>
+    </li>
+    <li>
+        <p>Benenne die Datei gg.txt in grundgesetz.txt mit Git um und erstelle dafür einen Commit</p>
+        <code>git mv gg.txt grundgesetz.txt
+            git commit -m "rename gg.txt"</code>
+    </li>
+    <li>
+        <p>Lass dir die Änderungen des ersten Commits anzeigen</p>
+        <code>git show [HASH] oder auch git show HEAD^^^</code>
+    </li>
+</ol>
 </body>
 </html>
