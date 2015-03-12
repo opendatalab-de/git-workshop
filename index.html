@@ -141,20 +141,33 @@
 <h2 id="collaborating">Zusammenarbeiten</h2>
 <ol>
     <li>
-        <p>Clone das Repository in ein neues Verzeichnis namens repo2</p>
+        <p>Erstelle einen Kopie mit der Option "bare" in einem neuen Verzeichnis (außerhalb des aktuellen Repositories) namens "remotekata"</p>
         <code>cd ..
-        git clone kata clonedkata</code>
+        git clone --bare kata remotekata</code>
+    </li>
+    <li>
+        <p>Erstelle einen Kopie in einem neuen Verzeichnis (außerhalb des aktuellen Repositories) namens "clonekata"</p>
+        <code>git clone kata clonekata</code>
+    </li>
+    <li>
+        <p>Füge im "kata" Repository das Repository "remotekata" als Remote-Repository "origin" ein</p>
+        <code>git remote add origin ../remotekata</code>
     </li>
     <li>
         <p>Füge im "kata" Repository eine Datei bgb.txt mit dem Inhalt "1 Beginn der Rechtsfähigkeit" hinzu und erstelle einen Commit</p>
         <code>cd kata
             echo "1 Beginn der Rechtsfähigkeit" > bgb.txt
             git add bgb.txt
-            git commit -m "add bgb"</code>
+            git commit -m "add bgb §1"</code>
     </li>
     <li>
-        <p>Wechsle ins "clonedkata" Repository und übernehme die Änderung aus dem "kata" Repository</p>
-        <code>git pull</code>
+        <p>Übertrage den Commit ans Remote-Repository</p>
+        <code>git push origin master</code>
+    </li>
+    <li>
+        <p>Wechsle ins "clonekata" Repository und übernehme den letzten Commit</p>
+        <code>cd ../clonekata
+            git pull</code>
     </li>
 </ol>
 </body>
