@@ -47,7 +47,6 @@
     <li><a href="#log">Anzeigen von Änderungen und der Historie</a></li>
     <li><a href="#branching">Branching & Merging</a></li>
     <li><a href="#collaborating">Zusammenarbeiten</a></li>
-    <li><a href="#github">GitHub & GitHub Pages</a></li>
 </ol>
 
 <h2 id="basics">Grundlagen</h2>
@@ -120,6 +119,12 @@
         <p class="expected-result">Erwartete Ausgabe: 3 Commits</p>
     </li>
     <li>
+        <p>Lass dir alle bisherigen Commits anzeigen, die die Datei grundgesetz.txt betreffen</p>
+        <code>git log gg.txt</code>
+
+        <p class="expected-result">Erwartete Ausgabe: 2 Commits</p>
+    </li>
+    <li>
         <p>Benenne die Datei gg.txt in grundgesetz.txt mit Git um und erstelle dafür einen Commit</p>
         <code>git mv gg.txt grundgesetz.txt
             git commit -m "rename gg.txt"</code>
@@ -137,6 +142,39 @@
 </ol>
 
 <h2 id="branching">Branching & Merging</h2>
+
+<h2 id="collaborating">Zusammenarbeiten</h2>
+<ol>
+    <li>
+        <p>Erstelle einen Kopie mit der Option "bare" in einem neuen Verzeichnis (außerhalb des aktuellen Repositories) namens "remotekata"</p>
+        <code>cd ..
+        git clone --bare kata remotekata</code>
+    </li>
+    <li>
+        <p>Erstelle einen Kopie in einem neuen Verzeichnis (außerhalb des aktuellen Repositories) namens "clonekata"</p>
+        <code>git clone kata clonekata</code>
+    </li>
+    <li>
+        <p>Füge im "kata" Repository das Repository "remotekata" als Remote-Repository "origin" ein</p>
+        <code>git remote add origin ../remotekata</code>
+    </li>
+    <li>
+        <p>Füge im "kata" Repository eine Datei bgb.txt mit dem Inhalt "1 Beginn der Rechtsfähigkeit" hinzu und erstelle einen Commit</p>
+        <code>cd kata
+            echo "1 Beginn der Rechtsfähigkeit" > bgb.txt
+            git add bgb.txt
+            git commit -m "add bgb §1"</code>
+    </li>
+    <li>
+        <p>Übertrage den Commit ans Remote-Repository</p>
+        <code>git push origin master</code>
+    </li>
+    <li>
+        <p>Wechsle ins "clonekata" Repository und übernehme den letzten Commit</p>
+        <code>cd ../clonekata
+            git pull</code>
+    </li>
+</ol>
 
 <li>
     <p>Erstelle einen Branch mit dem Namen kleine_revolution</p>
